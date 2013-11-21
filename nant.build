@@ -19,7 +19,7 @@
 		<property name="version.revision" value="0"/>
 		<property name="project.fullversion" value="${version.major}.${version.minor}.${version.build}.${version.revision}" dynamic="true" />
 	-->
-	<property name="nant.settings.currentframework" value="net-4.0" />
+	<property name="nant.settings.currentframework" value="net-4.5" />
 	<property name="msbuild.path" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />
 	<property name="nunit.path" value="bin\nunit\nunit-console-x86.exe" />
 	<property name="runtests" value="true" unless="${property::exists('runtests')}" />
