@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
  <metadata>
-   <id>MvcContrib.Mvc3</id>
+   <id>MvcContrib.Mvc5</id>
    <version></version>
    <authors>Outercurve Foundation</authors>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,7 +12,7 @@
    <licenseUrl>http://mvccontrib.codeplex.com/license</licenseUrl>
    <tags>mvc</tags>
    <dependencies>
-     <dependency id="Mvc3Futures" />
+     <dependency id="Mvc4Futures" />
    </dependencies>
  </metadata>
 </package>

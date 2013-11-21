@@ -8,7 +8,7 @@
 	<property name="build.base" value="build"/>
 	<property name="results.dir" value="${build.base}\results" />
 	<property name="samples.dir" value="src\samples"/>
-	<property name="project.fullversion" value="3.0.0.99" />
+	<property name="project.fullversion" value="5.0.0.0" />
 	<property name="project.fullversion" value="${environment::get-variable('BUILD_NUMBER')}" if="${environment::variable-exists('BUILD_NUMBER')}"/>
 	<!--
 		<property name="revisionnumber" value="0" dynamic="true"/>
@@ -21,7 +21,7 @@
 	-->
 	<property name="nant.settings.currentframework" value="net-4.5" />
 	<property name="msbuild.path" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />
-	<property name="nunit.path" value="bin\nunit\nunit-console-x86.exe" />
+	<property name="nunit.path" value="bin\nunit\nunit-console" />
 	<property name="runtests" value="true" unless="${property::exists('runtests')}" />
 	
 	<!-- default configuration -->
@@ -97,9 +97,9 @@
 		<property name="command.integration" value="${build.dir}/MvcContrib.CommandProcessor.IntegrationTests.dll"/>
 		<delete dir="${results.dir}" if="${directory::exists('${results.dir}')}" verbose="true" />
 		<mkdir dir="${results.dir}"/>
-		<exec program="${nunit.path}" 
-			commandline="${main.unit} ${command.unit} ${command.integration} /xml:${results.dir}\TestResult.xml" 
-			workingdir="." />
+    <!--exec program="${nunit.path}" 
+			commandline="/framework=net-4.5 ${main.unit} ${command.unit} ${command.integration} /xml:${results.dir}\TestResult.xml" 
+			workingdir="." /-->
 
 		<!--<nunit2 failonerror="true" verbose="true">
 			<formatter type="Xml" outputdir="${results.dir}" usefile="true" extension=".xml"/>
