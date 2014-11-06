@@ -106,16 +106,6 @@
     <Compile Include="ActionResultAssertionException.cs" />
     <Compile Include="ActionResultHelper.cs" />
     <Compile Include="Extensions\TempDataTestExtensions.cs" />
-    <Compile Include="FluentController\ActionExpectations.cs" />
-    <Compile Include="FluentController\ActionRedirect.cs" />
-    <Compile Include="FluentController\ActionRender.cs" />
-    <Compile Include="FluentController\ActionReturn.cs" />
-    <Compile Include="FluentController\CallSuccess.cs" />
-    <Compile Include="FluentController\ControllerRedirect.cs" />
-    <Compile Include="FluentController\ControllerRender.cs" />
-    <Compile Include="FluentController\GivenController.cs" />
-    <Compile Include="FluentController\ModelStateHelper.cs" />
-    <Compile Include="FluentController\ViewRender.cs" />
     <Compile Include="MockFactories\FirstAvailableMockFactory.cs" />
     <Compile Include="MockFactories\IMockFactory.cs" />
     <Compile Include="MockFactories\IMockProxy.cs" />
@@ -158,7 +148,6 @@
     <Compile Include="Ui\TextInputTester.cs" />
     <Compile Include="Ui\TextInputTesterFactory.cs" />
     <Compile Include="Ui\IBrowserDriver.cs" />
-    <Compile Include="WebTestUtility.cs" />
     <Compile Include="WriteableHttpFileCollection.cs" />
   </ItemGroup>
   <ItemGroup>
