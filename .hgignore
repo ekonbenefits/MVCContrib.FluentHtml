@@ -13,3 +13,4 @@ _ReSharper*
 TestResult.xml
 *.trx
 *.orig
+*.sln.ide/*
