@@ -41,7 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -182,77 +182,16 @@
     <Compile Include="ConventionController\TestFilter.cs" />
     <Compile Include="EnumerableExtensionTests.cs" />
     <Compile Include="Filters\ModelStateToTempDataAttributeTests.cs" />
-    <Compile Include="Filters\MvcTransactionAttributeTester.cs" />
     <Compile Include="Filters\PassParametersDuringRedirectAttributeTester.cs" />
     <Compile Include="Filters\TempDataToViewDataTester.cs" />
-    <Compile Include="FluentHtml\AutoLabelTests.cs" />
-    <Compile Include="FluentHtml\ButtonTests.cs" />
-    <Compile Include="FluentHtml\CheckBoxListTests.cs" />
-    <Compile Include="FluentHtml\CheckboxTests.cs" />
-    <Compile Include="FluentHtml\ColorPickerTests.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomExpressionHtmlBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomRangeHtmlBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomRequiredHtml5Behavior.cs" />
-    <Compile Include="FluentHtml\DataListTests.cs" />
-    <Compile Include="FluentHtml\EmailBoxTests.cs" />
-    <Compile Include="FluentHtml\NumberBoxTests.cs" />
-    <Compile Include="FluentHtml\DateAndTimePickerTests.cs" />
-    <Compile Include="FluentHtml\RangeBoxTests.cs" />
-    <Compile Include="FluentHtml\SearchBoxTests.cs" />
-    <Compile Include="FluentHtml\TelephoneBoxTests.cs" />
-    <Compile Include="FluentHtml\TypeCssClassBehaviorTests.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\AppyJsonMetadataToCssBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomMaxLengthInMetadataBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomRequiredHtmlBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomMaxLengthBehavior.cs" />
-    <Compile Include="FluentHtml\CustomBehaviors\CustomRequiredInMetadataBehavior.cs" />
-    <Compile Include="FluentHtml\Fakes\FakeChildModel.cs" />
-    <Compile Include="FluentHtml\Fakes\FakeEnum.cs" />
-    <Compile Include="FluentHtml\Fakes\FakeModel.cs" />
-    <Compile Include="FluentHtml\Fakes\FakeViewDataContainer.cs" />
-    <Compile Include="FluentHtml\Fakes\FakeViewModelContainer.cs" />
-    <Compile Include="FluentHtml\FileUploadTests.cs" />
-    <Compile Include="FluentHtml\FormLiteralTests.cs" />
-    <Compile Include="FluentHtml\Helpers\TestExtensions.cs" />
-    <Compile Include="FluentHtml\HiddenTests.cs" />
-    <Compile Include="FluentHtml\LabelTests.cs" />
-    <Compile Include="FluentHtml\LiteralTests.cs" />
-    <Compile Include="FluentHtml\ModelExpressionHelperTests.cs" />
-    <Compile Include="FluentHtml\ModelMasterViewPageTests.cs" />
-    <Compile Include="FluentHtml\ModelStateDictionaryExtensionsTests.cs" />
-    <Compile Include="FluentHtml\PartialNameConventionServiceTests.cs" />
-    <Compile Include="FluentHtml\RadioButtonTests.cs" />
-    <Compile Include="FluentHtml\RadioSetTests.cs" />
-    <Compile Include="FluentHtml\RequiredCssClassBehaviorTests.cs" />
-    <Compile Include="FluentHtml\ResetButtonTests.cs" />
-    <Compile Include="FluentHtml\UrlBoxTests.cs" />
-    <Compile Include="FluentHtml\ValidationMemberBehaviorTests.cs" />
-    <Compile Include="FluentHtml\ModelViewPageTests.cs" />
-    <Compile Include="FluentHtml\ModelViewUserControlPageTests.cs" />
-    <Compile Include="FluentHtml\MultiSelectTests.cs" />
-    <Compile Include="FluentHtml\OptionTests.cs" />
-    <Compile Include="FluentHtml\PasswordTests.cs" />
-    <Compile Include="FluentHtml\SelectTests.cs" />
-    <Compile Include="FluentHtml\SubmitButtonTests.cs" />
-    <Compile Include="FluentHtml\TextAreaTests.cs" />
-    <Compile Include="FluentHtml\TextboxTests.cs" />
-    <Compile Include="FluentHtml\ViewDataContainerExtensionBehaviorTests.cs" />
-    <Compile Include="FluentHtml\ViewDataContainerExtensionsTests.cs" />
-    <Compile Include="FluentHtml\ViewModelContainerExtensionsTests.cs" />
-    <Compile Include="FluentHtml\ViewModelContainerTestBase.cs" />
-    <Compile Include="FluentHtml\Views\TestableViewPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="HashTester.cs" />
     <Compile Include="IoC\IDependency.cs" />
     <Compile Include="IoC\INestedDependency.cs" />
     <Compile Include="IoC\NestedDependency.cs" />
     <Compile Include="IoC\SimpleDependency.cs" />
-    <Compile Include="IoC\WindsorExtensionTester.cs" />
     <Compile Include="EmailTemplateServiceTest.cs" />
     <Compile Include="ActionResults\XmlActionResultTester.cs" />
     <Compile Include="MvcRouteTester.cs" />
-    <Compile Include="ConventionController\RescueTester.cs" />
     <Compile Include="LazyPaginationTester.cs" />
     <Compile Include="PortableAreas\ApplicationBusTester.cs" />
     <Compile Include="PortableAreas\AssemblyResourceStoreTester.cs" />
@@ -265,15 +204,18 @@
     <Compile Include="SortingExtensionsTester.cs" />
     <Compile Include="TestHelper\ActionResultHelperTester.cs" />
     <Compile Include="TestHelper\ControllerBuilderTests.cs" />
+    <Compile Include="TestHelper\FluentController\FluentControllerTest.cs" />
     <Compile Include="TestHelper\MockFactories\FirstAvailableMockFactoryTests.cs" />
     <Compile Include="TestHelper\MockFactories\MoqFactoryTests.cs" />
     <Compile Include="TestHelper\MockFactories\MoqProxyTests.cs" />
     <Compile Include="TestHelper\MockFactories\RhinoMocksFactoryTests.cs" />
     <Compile Include="TestHelper\MockFactories\RhinoMocksProxyTests.cs" />
+    <Compile Include="TestHelper\RoutesTest.cs" />
     <Compile Include="TestHelper\RouteTestingExtensionsTester.cs" />
     <Compile Include="TestHelper\SessionTests.cs" />
     <Compile Include="TestHelper\TempDataTestExtensionsTests.cs" />
     <Compile Include="TestHelper\TestHelperController.cs" />
+    <Compile Include="TestHelper\TestHelperControllerWithArgs.cs" />
     <Compile Include="TestHelper\TestHelperWithArgsController.cs" />
     <Compile Include="TestHelper\WriteableHttpFileCollectionTests.cs" />
     <Compile Include="UI\DataListTests.cs" />
@@ -309,21 +251,9 @@
     <Compile Include="MvcMockHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvcContrib.Castle\MvcContrib.Castle.csproj">
-      <Project>{F3C74912-8FF8-4F79-8CA1-4697025FDF2D}</Project>
-      <Name>MvcContrib.Castle</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcContrib.FluentHtml\MvcContrib.FluentHtml.csproj">
-      <Project>{35AFBC04-8C09-42B7-A56A-EA404688A5B1}</Project>
-      <Name>MvcContrib.FluentHtml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvcContrib.TestHelper\MvcContrib.TestHelper\MvcContrib.TestHelper.csproj">
       <Project>{F2A3F400-A20E-4B83-959B-EBD14D6C143E}</Project>
       <Name>MvcContrib.TestHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MVCContrib.VB.UnitTests\MVCContrib.VB.UnitTests.vbproj">
-      <Project>{49CA25E8-C0C6-4007-9E5A-44AE4828E92E}</Project>
-      <Name>MVCContrib.VB.UnitTests</Name>
     </ProjectReference>
     <ProjectReference Include="..\MVCContrib\MVCContrib.csproj">
       <Project>{2E29C28C-B0B7-4D8C-A06F-67AD70C765EA}</Project>

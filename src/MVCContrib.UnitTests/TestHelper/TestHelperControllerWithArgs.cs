@@ -1,3 +1,5 @@
+using MvcContrib.UnitTests.TestHelper;
+
 namespace MvcContrib.TestHelper.Test
 {
 	public class TestHelperControllerWithArgs : TestHelperController

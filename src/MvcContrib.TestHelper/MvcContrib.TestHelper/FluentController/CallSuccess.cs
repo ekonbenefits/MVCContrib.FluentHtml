@@ -1,5 +1,4 @@
-﻿using MvcContrib.FluentController;
-
+﻿
 namespace MvcContrib.TestHelper.FluentController
 {
 	public static class CallSuccess

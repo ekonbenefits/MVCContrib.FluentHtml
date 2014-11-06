@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using MvcContrib.PortableAreas;
 using NUnit.Framework;
-using VB = MVCContrib.UnitTests.VB;
 
 namespace MvcContrib.UnitTests.PortableAreas
 {
@@ -27,17 +26,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             VerifyEmbeddedResourceControllerReturnEmbeddedImage(InitializeEmbeddedResourceController());
         }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_embedded_image_VB_at_root()
-        {
-            VerifyEmbeddedResourceControllerReturnEmbeddedImage(InitializeEmbeddedResourceControllerForVbAreaAtRoot());
-        }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_embedded_image_VB_under_subnamespace()
-        {
-            VerifyEmbeddedResourceControllerReturnEmbeddedImage(InitializeEmbeddedResourceControllerForVbAreaUnderSubNamespace());
-        }
 
         [Test]
         public void Embedded_resource_controller_should_return_404_for_nonexistant_resource()
@@ -45,17 +34,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             VerifyEmbeddedResourceControllerReturn404ForNonexistantResource(InitializeEmbeddedResourceController());
         }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_404_for_nonexistant_resource_VB_at_root()
-        {
-            VerifyEmbeddedResourceControllerReturn404ForNonexistantResource(InitializeEmbeddedResourceControllerForVbAreaAtRoot());
-        }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_404_for_nonexistant_resource_VB_under_subnamespace()
-        {
-            VerifyEmbeddedResourceControllerReturn404ForNonexistantResource(InitializeEmbeddedResourceControllerForVbAreaUnderSubNamespace());
-        }
 
         [Test]
         public void Embedded_resource_controller_should_return_embedded_image_for_custom_path()
@@ -63,17 +42,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             VerifyEmbeddedResourceControllerReturnEmbeddedImageForCustomPath(InitializeEmbeddedResourceController());
         }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_embedded_image_for_custom_path_VB_at_root()
-        {
-            VerifyEmbeddedResourceControllerReturnEmbeddedImageForCustomPath(InitializeEmbeddedResourceControllerForVbAreaAtRoot());
-        }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_embedded_image_for_custom_path_VB_under_subnamespace()
-        {
-            VerifyEmbeddedResourceControllerReturnEmbeddedImageForCustomPath(InitializeEmbeddedResourceControllerForVbAreaUnderSubNamespace());
-        }
 
         [Test]
         public void Embedded_resource_controller_should_return_404_for_nonexistant_custom_path()
@@ -81,17 +50,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             VerifyEmbeddedResourceControllerReturn404ForNonexistantCustomPath(InitializeEmbeddedResourceController());
         }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_404_for_nonexistant_custom_path_VB_at_root()
-        {
-            VerifyEmbeddedResourceControllerReturn404ForNonexistantCustomPath(InitializeEmbeddedResourceControllerForVbAreaAtRoot());
-        }
 
-        [Test]
-        public void Embedded_resource_controller_should_return_404_for_nonexistant_custom_path_VB_under_subnamespace()
-        {
-            VerifyEmbeddedResourceControllerReturn404ForNonexistantCustomPath(InitializeEmbeddedResourceControllerForVbAreaUnderSubNamespace());
-        }
 
         private static EmbeddedResourceController InitializeEmbeddedResourceController()
         {
@@ -106,21 +65,9 @@ namespace MvcContrib.UnitTests.PortableAreas
             return controller;
         }
 
-        private static EmbeddedResourceController InitializeEmbeddedResourceControllerForVbAreaAtRoot()
-        {
-            return InitializeEmbeddedResourceController(VB.PortableAreaRegistrationAtRoot.PortableAreaName);
-        }
-
-        private static EmbeddedResourceController InitializeEmbeddedResourceControllerForVbAreaUnderSubNamespace()
-        {
-            return InitializeEmbeddedResourceController(VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace.PortableAreaName);
-        }
-
         private void RegisterTestAreas()
         {
             RegisterTestArea();
-            RegisterTestAreaForVbAtRoot();
-            RegisterTestAreaForVbUnderSubNamespace();
         }
 
         private void RegisterTestArea()
@@ -134,17 +81,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             TestingAreaRegistration.Register(areaRegistration, registrationContext);
         }
 
-        private void RegisterTestAreaForVbAtRoot()
-        {
-            RegisterTestArea(new VB.PortableAreaRegistrationAtRoot(),
-                             VB.PortableAreaRegistrationAtRoot.PortableAreaName);
-        }
 
-        private void RegisterTestAreaForVbUnderSubNamespace()
-        {
-            RegisterTestArea(new VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace(),
-                             VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace.PortableAreaName);
-        }
 
         private void VerifyEmbeddedResourceControllerReturnEmbeddedImage(EmbeddedResourceController resourceController)
         {

@@ -3,7 +3,6 @@ using System.Web.Routing;
 using MvcContrib.PortableAreas;
 using MvcContrib.UI.InputBuilder.ViewEngine;
 using NUnit.Framework;
-using VB = MVCContrib.UnitTests.VB;
 
 namespace MvcContrib.UnitTests.PortableAreas
 {
@@ -27,17 +26,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             VerifiyAssemblyResourceStoreIsPathResourceStream(StubPortableAreaRegistrationForResourceStoreTest.PortableAreaName);
         }
 
-        [Test]
-        public void Assembly_resource_store_should_find_embedded_images_VB_at_root()
-        {
-            VerifiyAssemblyResourceStoreIsPathResourceStream(VB.PortableAreaRegistrationAtRoot.PortableAreaName);
-        }
 
-        [Test]
-        public void Assembly_resource_store_should_find_embedded_images_VB_under_subnamespace()
-        {
-            VerifiyAssemblyResourceStoreIsPathResourceStream(VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace.PortableAreaName);
-        }
 
         private void VerifiyAssemblyResourceStoreIsPathResourceStream(string areaName) {
             AssemblyResourceStore store;
@@ -61,8 +50,6 @@ namespace MvcContrib.UnitTests.PortableAreas
         private void RegisterTestAreas()
         {
             RegisterTestArea();
-            RegisterTestAreaForVbAtRoot();
-            RegisterTestAreaForVbUnderSubNamespace();
         }
 
         private void RegisterTestArea()
@@ -76,17 +63,7 @@ namespace MvcContrib.UnitTests.PortableAreas
             TestingAreaRegistration.Register(areaRegistration, registrationContext);
         }
 
-        private void RegisterTestAreaForVbAtRoot()
-        {
-            RegisterTestArea(new VB.PortableAreaRegistrationAtRoot(),
-                             VB.PortableAreaRegistrationAtRoot.PortableAreaName);
-        }
 
-        private void RegisterTestAreaForVbUnderSubNamespace()
-        {
-            RegisterTestArea(new VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace(),
-                             VB.PortableAreas.PortableAreaRegistrationUnderSubnamespace.PortableAreaName);
-        }
     }
 
     class StubPortableAreaRegistrationForResourceStoreTest : PortableAreaRegistration
